@@ -9,13 +9,13 @@ plt.rcParams['font.family'] = 'sans-serif'
 
 # 1. 加载训练日志（适配2000回合日志路径）
 current_dir = os.path.dirname(os.path.abspath(__file__))
-# 注意：训练完成后最终日志是 train_logs_2000ep.npy，训练中是 train_logs.npy
-log_path = os.path.join(current_dir, "uav_epc_results", "train_logs_3000ep.npy")
+# 注意：训练完成后最终日志是 train_logs_final_2000ep_optimized.npy，训练中是 train_logs.npy
+log_path = os.path.join(current_dir, "uav_epc_results", "train_logs_final_2000ep_optimized.npy")
 
 # 检查日志是否存在
 if not os.path.exists(log_path):
     # 兜底：加载训练中的临时日志
-    log_path = os.path.join(current_dir, "uav_epc_results", "train_logs_3000.npy")
+    log_path = os.path.join(current_dir, "uav_epc_results", "train_logs_final_2000ep_optimized.npy")
     if not os.path.exists(log_path):
         print(f"❌ 未找到日志文件！路径：{log_path}")
         input("按任意键退出...")
